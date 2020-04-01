@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DropDown from './Component/dropDown';
+import Menu from './Component/menu';
+
+
+let myList =  [
+                {
+                  title:"Home",
+                  isDropDown:false,
+                  link:"",
+                  isActive:"",
+                  items:""
+                },
+                {
+                  title:"Services",
+                  isDropDown:true,
+                  link:"",
+                  isActive:"",
+                  items:["For entrepreneurs","For students","For hobbyists"]
+                },{
+                  title:"Contact",
+                  isDropDown:false,
+                  link:"",
+                  isActive:"",
+                  items:""
+                }
+              ]
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return ( 
+            <nav>
+                <Menu listMenu={myList}/>
+                {/* <DropDown items={myList}>Services</DropDown> */}
+            </nav>
+
   );
 }
-
 export default App;
