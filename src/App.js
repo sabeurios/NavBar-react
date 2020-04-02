@@ -1,41 +1,31 @@
 import React from 'react';
 import './App.css';
-import DropDown from './Component/dropDown';
-import Menu from './Component/menu';
+import Items from './Component/items';
+import Menu from './Component/menus';
 
 
-let myList =  [
+let myList = [
                 {
-                  title:"Home",
-                  isDropDown:false,
-                  link:"",
-                  isActive:"",
-                  items:""
+                    link : "#",
+                    title : "For entrepreneurs"
                 },
                 {
-                  title:"Services",
-                  isDropDown:true,
-                  link:"",
-                  isActive:"",
-                  items:["For entrepreneurs","For students","For hobbyists"]
-                },{
-                  title:"Contact",
-                  isDropDown:false,
-                  link:"",
-                  isActive:"",
-                  items:""
+                    link : "#",
+                    title : "For Students"
+                },
+                {
+                    lien : "#",
+                    title : "For hobbyists"
                 }
               ]
 
-
-
 function App() {
-  return ( 
-            <nav>
-                <Menu listMenu={myList}/>
-                {/* <DropDown items={myList}>Services</DropDown> */}
-            </nav>
-
-  );
-}
+  return <div className="navbar">
+       <ul className="navbar-element">
+           <Menu>Home</Menu>
+           <Menu>Services <Items dropDwn= {myList}/> </Menu>
+           <Menu>Contact </Menu>
+       </ul>
+  </div>
+  }
 export default App;
